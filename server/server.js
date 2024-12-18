@@ -19,11 +19,18 @@ next();
 // A .get method with the endpoint /users
 // The .get method has a callbackfunction in the form of an arrowfunktion with the parameters req and res
 server.get('/users', (req, res) => {
+    // Connects the database file with the name gik339-labb.db
     const db = new sqlite3.Database('./gik339-labb2.db');
+    // The database funktion all() asks the database a question 
+    // First argument is 'SELECT * FROM users', which gets all lines from the table users in the database
+    // Second argument is a callbackfunktion in the form of an arrow-function with the parameters err and rows 
+    // err contains errors while rows contains actuall data from the database when everything goes right 
     db.all('SELECT * FROM users', (err, rows) => {
         if (err) {
+            // Status code to the user informing about an error 
             res.status(500).send(err);
         } else{
+            // An answer sent to the user when the question has processed 
             res.send(rows);
         }
     });
