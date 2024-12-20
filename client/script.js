@@ -33,7 +33,7 @@ fetch('http://localhost:3000/users')
             // A background color is added to the element based on the users color
             newLi.classList.add(user.color);
             // A template string that writes the user's info in the li-element
-            newLi.innerHTML = `Frist Name: ${user.firstName}<br />
+            newLi.innerHTML = `First Name: ${user.firstName}<br />
                                Last Name: ${user.lastName}<br />
                                Username: ${user.username}`;
             // Adds the li-element in the ul-elemnt
@@ -41,8 +41,3 @@ fetch('http://localhost:3000/users')
             newUl.insertAdjacentElement('beforeend', newLi);
         });
     });
-
-
-
-
-
