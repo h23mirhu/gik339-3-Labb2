@@ -8,6 +8,7 @@ newUl.classList.add('new-ul');
 // Adds background color to element
 newUl.classList.add('background');
 // Adds the ul-element in the div-elemnt
+// Adds the ul-element to the DOM
 div.insertAdjacentElement('beforeend', newUl);
 
 // Fetches data from the database
@@ -36,6 +37,7 @@ fetch('http://localhost:3000/users')
                                Last Name: ${user.lastName}<br />
                                Username: ${user.username}`;
             // Adds the li-element in the ul-elemnt
+            // Adds the li-element to the DOM
             newUl.insertAdjacentElement('beforeend', newLi);
         });
     });
